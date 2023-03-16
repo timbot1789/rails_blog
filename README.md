@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the code for my own personal site where I post blogs and stuff. Over time, I want to expand this to have a variety of different topics and features. Pretty barebones for right now. We only have
 
-Things you may want to cover:
+1. Viewing multiple blogs
+2. Rendering blogs written in markdown into HTML
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I expect most of the content here to be backend focused, although I may post some frontend designs from time to time.
