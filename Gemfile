@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Markdown to HTML renderer
 gem "redcarpet"
 
+# Job Queue system
+gem 'sidekiq'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

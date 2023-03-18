@@ -36,7 +36,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
 
         <div class="w3-container">
-        <p><%= article.body.split('\n').first%></p>
+        <p><%= simple_format article.body&.split('\n')&.first, {}, sanitize: false%></p>
         <div class="w3-row">
             <div class="w3-col m8 s12">
             <%= link_to article_path(article) do%>
