@@ -1,7 +1,7 @@
 class IntroController < ApplicationController
 
   def show 
-    @articles = Article.first(5)
+    @articles = Article.where(status: "OPEN").last(5)
   end
 end
   

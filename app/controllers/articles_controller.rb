@@ -7,9 +7,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    req = JSON.parse(request.body.read)
+    req = request.body.read
 
-    article = Article.create(title: req["title"], markdown: req["markdown"], status: "RENDERING")
+    title = req.split("\n").first.strip().gsub(/[\#\*\`]/, '')
+
+    article = Article.create(title: title, markdown: req, status: "RENDERING")
     RenderBlogPostsJob.perform_async(article.id)
   end
 end
