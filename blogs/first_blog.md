@@ -1,6 +1,6 @@
 # Basic Blogpost Rendering
 
-This is primarily a test post for rendering posts of my blog in markdown for my personal website. In order to do this, I'll need to render the markdown of this document into HTML. How am I going to do this? Well, easily enough, there's a ruby gem, [redcarpet](https://github.com/vmg/redcarpet) that can do it for me. My website is written in rails, so ruby is kinda the goto.\n\nMy current structure is this:
+This is primarily a test post for rendering posts of my blog in markdown for my personal website. In order to do this, I'll need to render the markdown of this document into HTML. How am I going to do this? Well, easily enough, there's a ruby gem, [redcarpet](https://github.com/vmg/redcarpet) that can do it for me. My website is written in rails, so ruby is kinda the goto. My current structure is this:
 
 1. Write a blogpost manually
 2. Upload it manually into the SQLite database using the rails console
