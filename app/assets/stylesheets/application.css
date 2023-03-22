@@ -10,19 +10,17 @@ html {
 }
 
 body {
-    height: 0;
     background-color: rgb(242, 242, 242);
 }
 
-body, h1, h2, h3, h4, h5 {
+body, h1, h2, h3, h4, h5, header {
     margin: 0
 }
 
 .body-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    margin-left: 8px;
-    margin-right: 8px;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
 }
 
 .flex-column {
@@ -31,19 +29,19 @@ body, h1, h2, h3, h4, h5 {
 }
 
 .header {
-    margin: 8px;
     text-align: center;
     border-bottom: 1px solid darkgray;
+    background-color: rgb(33, 38, 40);
+    color:  rgb(242, 242, 242);
 }
 
 .large-card,
 .small-card {
-    padding: 8px
+    padding: 8px;
+    flex: 1;
 }
 
 .container {
-    padding-left: 8px;
-    padding-right: 8px;
 }
 
 .content {
@@ -89,7 +87,11 @@ a:visited,a:link .custom-button {
 }
 
 .nav {
-    border-right: 1px solid darkgray;
+    border: 1px solid darkgray;
+    margin: 8px;
+    background-color: beige;
+    flex: 0 0 240px;
+    align-self: flex-start;
 }
 
 button,

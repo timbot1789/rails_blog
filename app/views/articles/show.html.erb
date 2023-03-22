@@ -13,16 +13,19 @@ body,h1,h2,h3,h4,h5 {font-family: "Roboto", "sans-serif"}
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="content" style="max-width:1400px">
-
     <!-- Header -->
     <%= render "shared/header" %>
+
+    <div class="body-grid-container">
+
+    <%= render "shared/nav" %> 
 
     <!-- Body -->
     <%= render partial: "shared/blog_post", locals: {article: @article, summary: false} %>
 
+    </div>
+
 <!-- END w3-content -->
-</div>
 
 </body>
 </html>
