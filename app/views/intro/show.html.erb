@@ -5,43 +5,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <% stylesheet_link_tag "application" %>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+body,h1,h2,h3,h4,h5 {font-family: "Roboto", "sans-serif"}
 </style>
 </head>
-<body class="w3-light-grey">
+<body>
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+<div class="content" style="max-width:1400px">
 
 <!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
+<header class="small-card header center">
+  <div class="card-header">
   <h1><b>Tim Standen</b></h1>
   <p>Welcome to my blog</p>
+  </div>
 </header>
 
 <!-- Grid -->
-<div class="w3-row">
+<div class="body-grid-container">
+
+<!-- Introduction menu -->
+<div class="flex-column nav">
+  <!-- About Card -->
+  <div class="small-card">
+    <div class="card-header">
+      <h4><b>About Me</b></h4>
+    </div>
+    <div>
+      <p>This is a place where I post some writings about things that interest me, and experiment with different web design topics</p>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="container small-card">
+    <div class="card-header">
+      <h4>Most Recent Posts</h4>
+    </div>
+    <ul>
+      <li>
+        <span>Ipsum</span><br>
+        <span>Praes tinci sed</span>
+      </li> 
+      <li>
+        <span>Dorum</span><br>
+        <span>Ultricies congue</span>
+      </li>   
+      <li>
+        <span>Mingsum</span><br>
+        <span>Lorem ipsum dipsum</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="container small-card">
+    <div class="card-header">
+      <h4>Tags</h4>
+    </div>
+    <div>
+    <p>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
 
 <!-- Blog entries -->
-<div class="w3-col l8 s12">
+<div class="flex-column">
 
     <% @articles.each do |article|%>
-        <div class="w3-card-4 w3-margin w3-white">
-        <div class="w3-container">
-        <h3><b><%= article.title %></b></h3>
-        <h5><span class="w3-opacity"><%= article.created_at %></span></h5>
+        <div class="large-card">
+        <div class="container card-header">
+          <h3><b><%= article.title %></b></h3>
+          <h5><span class="w3-opacity"><%= article.created_at %></span></h5>
         </div>
 
-        <div class="w3-container">
+        <div class="container blog-post">
         <p><%= simple_format article.body&.split("\n").first, {}, sanitize: false%></p>
         <div class="w3-row">
             <div class="w3-col m8 s12">
             <%= link_to article_path(article) do%>
-                <button class="w3-button w3-padding-large w3-white w3-border">
-                    <b> Read More </b>
+                <button class="custom-button">
+                    READ MORE
                 </button>
             <%end%>
             </div>
@@ -51,53 +100,6 @@ and is wrapped around the whole page content, except for the footer in this exam
     <hr>
     <% end %>
 <!-- END BLOG ENTRIES -->
-</div>
-
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-    <div class="w3-container w3-white">
-      <h4><b>My Name</b></h4>
-      <p>This is a place where I post some writings about things that interest me, and experiment with different web design t</p>
-    </div>
-  </div><hr>
-  
-  <!-- Posts -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Most Recent Posts</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-
-      <li class="w3-padding-16">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li class="w3-padding-16">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul>
-  </div>
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p>
-    </p>
-    </div>
-  </div>
-  
-<!-- END Introduction Menu -->
 </div>
 
 <!-- END GRID -->
