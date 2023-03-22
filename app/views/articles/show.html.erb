@@ -16,24 +16,11 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="content" style="max-width:1400px">
 
     <!-- Header -->
-    <header class="small-card header center">
-        <div class="card-header">
-        <h1><b>Tim Standen</b></h1>
-        <p>Welcome to my blog</p>
-        </div>
-    </header>
+    <%= render "shared/header" %>
 
     <!-- Body -->
-    <div class="large-card">
-        <div class="container card-header">
-            <h3><b><%= @article.title %></b></h3>
-            <h5><span class="w3-opacity"><%= @article.created_at %></span></h5>
-        </div>
+    <%= render partial: "shared/blog_post", locals: {article: @article, summary: false} %>
 
-        <div class="container blog-post">
-            <p><%= simple_format @article.body, {}, sanitize: false%></p>
-        </div>
-    </div>
 <!-- END w3-content -->
 </div>
 

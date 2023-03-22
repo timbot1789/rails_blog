@@ -16,87 +16,18 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="content" style="max-width:1400px">
 
 <!-- Header -->
-<header class="small-card header center">
-  <div class="card-header">
-  <h1><b>Tim Standen</b></h1>
-  <p>Welcome to my blog</p>
-  </div>
-</header>
+<%= render "shared/header" %>
 
 <!-- Grid -->
 <div class="body-grid-container">
 
-<!-- Introduction menu -->
-<div class="flex-column nav">
-  <!-- About Card -->
-  <div class="small-card">
-    <div class="card-header">
-      <h4><b>About Me</b></h4>
-    </div>
-    <div>
-      <p>This is a place where I post some writings about things that interest me, and experiment with different web design topics</p>
-    </div>
-  </div><hr>
-  
-  <!-- Posts -->
-  <div class="container small-card">
-    <div class="card-header">
-      <h4>Most Recent Posts</h4>
-    </div>
-    <ul>
-      <li>
-        <span>Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li>
-        <span>Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li>
-        <span>Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul>
-  </div>
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <div class="container small-card">
-    <div class="card-header">
-      <h4>Tags</h4>
-    </div>
-    <div>
-    <p>
-    </p>
-    </div>
-  </div>
-  
-<!-- END Introduction Menu -->
-</div>
+<%= render "shared/nav" %> 
 
 <!-- Blog entries -->
 <div class="flex-column">
 
     <% @articles.each do |article|%>
-        <div class="large-card">
-        <div class="container card-header">
-          <h3><b><%= article.title %></b></h3>
-          <h5><span class="w3-opacity"><%= article.created_at %></span></h5>
-        </div>
-
-        <div class="container blog-post">
-        <p><%= simple_format article.body&.split("\n").first, {}, sanitize: false%></p>
-        <div class="w3-row">
-            <div class="w3-col m8 s12">
-            <%= link_to article_path(article) do%>
-                <button class="custom-button">
-                    READ MORE
-                </button>
-            <%end%>
-            </div>
-        </div>
-        </div>
-    </div>
+      <%= render partial: "shared/blog_post", locals: {article: article, summary: true} %>
     <% end %>
 <!-- END BLOG ENTRIES -->
 </div>

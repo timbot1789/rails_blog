@@ -1,0 +1,32 @@
+<div class="large-card">
+    <div class="container card-header">
+        <h3><b><%= article.title %></b></h3>
+        <h5><span class="w3-opacity"><%= article.created_at %></span></h5>
+    </div>
+
+    <div class="container blog-post">
+    <p>
+        <% if summary %>
+            <%= simple_format article.body&.split("\n").first, {}, sanitize: false%>
+        <% else %>
+            <%= simple_format article.body, {}, sanitize: false%>
+        <% end %>
+    </p>
+    <div class="w3-row">
+        <div class="w3-col m8 s12">
+        <% if summary %>
+            <%= link_to article_path(article) do%>
+                <button class="custom-button">
+                    READ MORE
+                </button>
+            <%end%>
+        <% else %>
+            <%= link_to :back do%>
+                <button class="custom-button">
+                    GO BACK
+                </button>
+            <%end%>
+        <% end %>
+        </div>
+    </div>
+</div>
