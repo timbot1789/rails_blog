@@ -1,0 +1,18 @@
+<% if (@num_pages > 1) %>
+    <div class="card large-card">
+        <% if (@page > 1 )%>
+            <%= link_to "/?page=#{@page - 1}" do%>
+                <button class="custom-button">
+                    〈〈 Previous
+                </button>
+            <%end%>
+        <% end %>
+        <% if (@page < @num_pages) %>
+            <%= link_to "/?page=#{@page + 1}" do%>
+                <button class="custom-button" style="float: right">
+                    Next 〉〉
+                </button>
+            <%end%>
+        <% end %>
+    </div>
+<% end %>

@@ -27,6 +27,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     <% @articles.each do |article|%>
       <%= render partial: "shared/blog_post", locals: {article: article, summary: true} %>
     <% end %>
+
+    <%= render partial: "shared/pagination_control", locals: {page: @page, num_pages: @num_pages} %>
 <!-- END BLOG ENTRIES -->
 </div>
 
