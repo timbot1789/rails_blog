@@ -41,3 +41,5 @@ out.*
 app/assets/images
 
 blogs/hidden_from_vc
+
+.env
