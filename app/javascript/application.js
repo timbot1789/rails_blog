@@ -62,7 +62,8 @@ const fetchHoroscope = async (pokeName) => {
             body: JSON.stringify(horoscopePrompt),
         }
     );
-    return await response.json();
+    const fortuneCookie = await response.json();
+    return fortuneCookie.choices[0].message.content;
     }
     catch (error) {
         console.log(error);
@@ -79,7 +80,7 @@ const horoscopeReady = async (fn) => {
         });
     }
     const {pokemon, spriteUrl, horoscope} = await initializePokemon();
-    state.pokemon = pokemon;
+    state.pokemon = pokemon.charAt(0).toUpperCase() + pokemon.slice(1);
     state.spriteUrl = spriteUrl;
     state.horoscope = horoscope ? horoscope : await fetchHoroscope(pokemon);
     storeState();

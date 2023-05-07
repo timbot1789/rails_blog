@@ -12,7 +12,7 @@ class PromptController < ApplicationController
             "model": "gpt-3.5-turbo",
             "messages": [{
                 "role": "user",
-                "content": "prompt"
+                "content": prompt
             }],
             "temperature": 0.7
         }
@@ -27,6 +27,6 @@ class PromptController < ApplicationController
         puts "\nreq: #{req.body}\n"
         puts "\nres: #{res.body}\n"
 
-        return res
+        render :json => res.body
     end
 end
