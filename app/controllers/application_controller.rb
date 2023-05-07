@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
     http_basic_authenticate_with( 
         name: ENV["ADMIN_USER"], 
         password: ENV["ADMIN_PASSWORD"], 
-        except: [:show, :index]
+        except: [:show, :index, :prompt]
     )
 end

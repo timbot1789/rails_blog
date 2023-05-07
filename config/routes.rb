@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root "intro#show"
   get "/intro", to: "intro#show"
   get "/about", to: "about#show"
+  post "/prompt", to: "prompt#prompt"
   resources :articles
 end
