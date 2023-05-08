@@ -26,8 +26,10 @@ function Binding(b) {
 }
 
 const initializePokemon = async () => {
-    let lastVisited = localStorage.getItem('lastVisited');
-    if (lastVisited === null || new Date(lastVisited).getDay() !== new Date(Date.now()).getDay()) {
+    let lastVisited = parseInt(localStorage.getItem('lastVisited'));
+    const lastVisitedDay = new Date(lastVisited).getDay();
+    const today = new Date(Date.now()).getDay();
+    if (lastVisited === NaN ||  (lastVisitedDay !== today)) {
         lastVisited = Date.now();
         localStorage.setItem('lastVisited', lastVisited);
         return await fetchPokemon();
