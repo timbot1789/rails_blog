@@ -1,0 +1,8 @@
+DATABASE_NAME=database
+DATABASE_USER=admin
+DATABASE_PASSWORD=password
+DATABASE_HOST=database
+REDIS_HOST=redis
+ADMIN_USER=admin
+ADMIN_PASSWORD=password
+PERSONAL_BLOG_KEY=open-ai-key
