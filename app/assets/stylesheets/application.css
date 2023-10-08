@@ -1,9 +1,9 @@
 :root {
-    --border-brown: #808080;
-    --text-brown: #f5f5f5;
-    --text-off-white: rgb(233, 233, 233);
+    --border-color: #808080;
+    --text-color-main: black;
+    --text-color-header: darkblue;
     --text-blue: rgb(161, 181, 253);
-    --background-black: rgba(5, 5, 5, 0.88);
+    --background-color: rgba(233, 233, 233);
 }
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
@@ -21,6 +21,7 @@ body {
     background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 body, h1, h2, h3, h4, h5, header {
@@ -40,31 +41,31 @@ body, h1, h2, h3, h4, h5, header {
 
 .header {
     text-align: center;
-    border-bottom: 1px solid var(--border-brown);
+    border-bottom: 1px solid var(--border-color);
     margin: 8px;
 }
 
 .card {
-    color: var(--text-brown);
+    color: var(--text-color-main);
     padding: 8px;
     flex: 1;
 }
 
 .large-card {
-    background-color: var(--background-black);
+    background-color: var(--background-color);
     margin: 4px;
-    border: 2px solid var(--border-brown);
+    border: 2px solid var(--border-color);
 }
 
 .small-card {
-    background-color: var(--background-black);
-    border: 2px solid var(--border-brown);
+    background-color: var(--background-color);
+    border: 2px solid var(--border-color);
 }
 
 .card-header {
     padding: 8px;
-    border-bottom: 1px solid var(--border-brown);
-    color: var(--text-off-white);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color-header);
 }
 
 .blog-post {
@@ -90,9 +91,9 @@ body, h1, h2, h3, h4, h5, header {
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
-    border: 2px solid var(--border-brown);
+    border: 2px solid var(--border-color);
     background-color: inherit;  
-    color: var(--text-brown);
+    color: var(--text-color-main);
 }
 
 a:visited,a:link .custom-button {
