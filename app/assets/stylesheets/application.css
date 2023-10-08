@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background-image: url("wald-maps.jpg");
+    background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
